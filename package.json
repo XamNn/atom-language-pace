@@ -1,0 +1,14 @@
+{
+  "name": "language-pace",
+  "version": "0.0.0",
+  "description": "Pace language support",
+  "keywords": [
+    "language",
+    "grammar"
+  ],
+  "repository": "https://github.com/XamNn/atom-language-pace",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
