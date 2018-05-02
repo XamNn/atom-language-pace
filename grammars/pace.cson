@@ -1,14 +1,49 @@
 # If this is your first time writing a language grammar, check out:
 #   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
 
-'scopeName': 'source.pace'
-'name': 'Pace'
-'fileTypes': [
-  'extension'
+"scopeName": "source.pace"
+"name": "Pace"
+"fileTypes": [
+  "pace"
 ]
-'patterns': [
+"patterns": [
   {
-    'match': '^\\s*@@.*$'
-    'name': 'comment'
+    "match": "\\b(?:element|class|struct|option|return|default|null|object|bool|type|get|set|alias|if|when|then|else|break|continue|is|import|use|config|convertion|operator|main|func|public|private|visible|this|new|for|yield|true|false|not|and|or|throw|catch)\\b"
+    "name": "keyword.pace"
+  },
+  {
+    "match": "(global)::",
+    "captures": {
+      "1": {
+        "name": "keyword.pace"
+      }
+    }
+  },
+  {
+    "match": "\\0[xX][0-9a-fA-F]+",
+    "name": "constant.numeric.pace"
+  },
+  {
+    "match": "\\0[bB][01]+",
+    "name": "constant.numeric.pace"
+  },
+  {
+    "match": "\\b[0-9]+(?:\\.[0-9]+)?",
+    "name": "constant.numeric.pace"
+  },
+  {
+    "begin": "<!--",
+    "end": "-->",
+    "name": "comment.pace"
+  },
+  {
+    "begin": "//",
+    "end": "\\n",
+    "name": "comment.pace"
+  },
+  {
+    "begin": "\"",
+    "end": "\"",
+    "name": "string.pace"
   }
 ]
