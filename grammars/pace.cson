@@ -12,19 +12,11 @@
     "name": "keyword.pace"
   },
   {
-    "match": "(global)::",
-    "captures": {
-      "1": {
-        "name": "keyword.pace"
-      }
-    }
-  },
-  {
-    "match": "\\0[xX][0-9a-fA-F]+",
+    "match": "\\b[xX][0-9a-fA-F]+",
     "name": "constant.numeric.pace"
   },
   {
-    "match": "\\0[bB][01]+",
+    "match": "\\b[bB][01]+",
     "name": "constant.numeric.pace"
   },
   {
@@ -45,5 +37,26 @@
     "begin": "\"",
     "end": "\"",
     "name": "string.pace"
+  },
+  {
+    "begin": "(?=<attributes>)",
+    "end": "(?<=</attributes>)",
+    "patterns": [
+      {
+        "include": "text.xml"
+      }
+    ]
+  },
+  {
+    "match": "\\b(?:implicit|automatic)\\s*convertion",
+    "name": "keyword.pace"
+  }
+  {
+    "match": "(global)::",
+    "captures": {
+      "1": {
+        "name": "keyword.pace"
+      }
+    }
   }
 ]
