@@ -12,11 +12,11 @@
     "name": "keyword.pace"
   },
   {
-    "match": "\\b[xX][0-9a-fA-F]+",
+    "match": "\\b0[xX][0-9a-fA-F]+",
     "name": "constant.numeric.pace"
   },
   {
-    "match": "\\b[bB][01]+",
+    "match": "\\b0[bB][01]+",
     "name": "constant.numeric.pace"
   },
   {
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "match": "\\b(?:implicit|automatic)\\s*convertion",
+    "match": "\\b(?:implicit|automatic)\\s+convertion",
     "name": "keyword.pace"
   }
   {
