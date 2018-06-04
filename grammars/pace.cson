@@ -1,5 +1,3 @@
-# If this is your first time writing a language grammar, check out:
-#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
 
 "scopeName": "source.pace"
 "name": "Pace"
@@ -8,8 +6,24 @@
 ]
 "patterns": [
   {
-    "match": "\\b(?:element|class|struct|option|return|default|null|object|bool|type|get|set|alias|if|when|then|else|break|continue|is|import|use|config|convertion|operator|main|func|public|private|visible|this|new|for|yield|true|false|not|and|or|throw|catch)\\b"
+    "match": "\\b(?:element|class|struct|return|default|type|get|set|alias|if|when|then|else|break|continue|is|import|use|config|convertion|operator|main|func|public|private|visible|this|new|not|and|or|throw|catch)\\b"
     "name": "keyword.pace"
+  },
+  {
+    "match": "(\\w+)\\s*(?:(<(?:\\g'2'|[^<>])*>)\\s*)?\\(",
+    "captures":{
+      "1":{
+        "name":"entity.name.function"
+      }
+    },
+  },
+  {
+    "match": "\\b(?:true|false|null)",
+    "name": "constant.language"
+  },
+  {
+    "match": "\\b(?:object|bool)\\b",
+    "name": "entity.name.type"
   },
   {
     "match": "\\b0[xX][0-9a-fA-F]+",
