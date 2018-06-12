@@ -6,11 +6,11 @@
 ]
 "patterns": [
   {
-    "match": "\\b(?:element|class|struct|return|default|type|get|set|alias|if|when|then|else|break|continue|is|import|use|config|convertion|operator|main|func|public|private|visible|this|new|not|and|or|throw|catch)\\b"
+    "match": "\\b(?:element|class|struct|return|default|type|get|set|alias|if|when|then|else|break|continue|is|config|use|convertion|operator|func|public|private|visible|this|new|not|and|or|throw|catch)\\b"
     "name": "keyword.pace"
   },
   {
-    "match": "(\\w+)\\s*(?:(<(?:\\g'2'|[^<>])*>)\\s*)?\\(",
+    "match": "([\\p{L}_][\\p{L}_0-9]*)\\s*(?:(<(?:\\g'2'|[^<>])*>)\\s*)?\\(",
     "captures":{
       "1":{
         "name":"entity.name.function"
@@ -25,6 +25,25 @@
     "match": "\\b(?:object|bool)\\b",
     "name": "entity.name.type"
   },
+  {
+    "match": "\\[(import|package)\\s*(\\w+)\\s*]",
+    "captures":{
+      "1":{
+        "name": "keyword.pace"
+      },
+      "2":{
+        "name": "string.package.pace"
+      }
+    }
+  },
+  {
+    "match": "\\b(main)\\s*=>",
+    "captures":{
+      "1":{
+        "name": "keyword.pace"
+      }
+    }
+  }
   {
     "match": "\\b0[xX][0-9a-fA-F]+",
     "name": "constant.numeric.pace"
@@ -64,13 +83,21 @@
   {
     "match": "\\b(?:implicit|automatic)\\s+convertion\\b",
     "name": "keyword.pace"
-  }
+  },
   {
-    "match": "(global)::",
+    "match": "(global|local)\\s*(?=::)",
     "captures": {
       "1": {
         "name": "keyword.pace"
       }
+    }
+  },
+  {
+    "match": "(\\w+)\\s*(?=::)\\s*(\\w+)?",
+    "captures": {
+      "1": {
+        "name": "string.package.pace"
+      },
     }
   }
 ]

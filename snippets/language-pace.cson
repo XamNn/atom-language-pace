@@ -7,4 +7,4 @@
     "body": "<attributes>\n${1}\n</attributes>",
   "Entry Point":
     "prefix": "main"
-    "body": "main = {\n\t${1}\n}"
+    "body": "main => {\n\t${1}\n}"
