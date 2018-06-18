@@ -26,7 +26,7 @@
     "name": "entity.name.type"
   },
   {
-    "match": "\\[\\s*(import|package)\\s+(\\w+)\\s*]",
+    "match": "\\[\\s*(depends|package)\\s+(\\w+)\\s*]",
     "captures":{
       "1":{
         "name": "keyword.pace"
